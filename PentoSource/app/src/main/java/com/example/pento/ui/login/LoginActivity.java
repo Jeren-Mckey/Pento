@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
 
-    // Hello world from local master branch!
+    // Hello world from local unstable branch!
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
