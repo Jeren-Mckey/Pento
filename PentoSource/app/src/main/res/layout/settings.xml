@@ -1,94 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="135dp"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="148dp"
-        android:layout_marginRight="148dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+    <TableLayout
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:stretchColumns="1"
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginRight="101dp"
-        android:layout_marginBottom="31dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Sample User"
-        app:layout_constraintBottom_toTopOf="@+id/notificationsAndSounds"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/notificationsAndSounds"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginLeft="98dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="98dp"
-        android:layout_marginRight="98dp"
-        android:layout_marginBottom="10dp"
-        android:onClick="notificationsAndSounds"
-        android:text="Notifications and Sounds"
-        app:layout_constraintBottom_toTopOf="@+id/chatHeads"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
-
-    <CheckBox
-        android:id="@+id/chatHeads"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="153dp"
-        android:layout_marginLeft="153dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="153dp"
-        android:layout_marginRight="153dp"
-        android:layout_marginBottom="10dp"
-        android:checked="false"
-        android:text="Chat Heads"
-        app:layout_constraintBottom_toTopOf="@+id/showLocation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notificationsAndSounds" />
-
-    <Switch
-        android:id="@+id/showLocation"
-        android:layout_width="141dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="135dp"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="135dp"
-        android:layout_marginRight="135dp"
-        android:layout_marginBottom="180dp"
-        android:text="Show Location"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chatHeads" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        xmlns:xmls="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/tools"
+        app:ignore="NamespaceTypo">
+        <TableRow/>
+        <TableRow>
+            <TextView
+                android:id="@+id/text_view_id"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:text="Settings" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/notificationsAndSounds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="98dp"
+                android:layout_marginLeft="98dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="98dp"
+                android:layout_marginRight="98dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="notificationsAndSounds"
+                android:text="Switch Account"
+                app:layout_constraintBottom_toTopOf="@+id/chatHeads"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/notification2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="98dp"
+                android:layout_marginLeft="98dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="98dp"
+                android:layout_marginRight="98dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="notificationsAndSounds"
+                android:text="Account Settings  "
+                app:layout_constraintBottom_toTopOf="@+id/chatHeads"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/notification3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="98dp"
+                android:layout_marginLeft="98dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="98dp"
+                android:layout_marginRight="98dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="notificationsAndSounds"
+                android:text="Notifications and Sounds"
+                app:layout_constraintBottom_toTopOf="@+id/chatHeads"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/notification4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="98dp"
+                android:layout_marginLeft="98dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="98dp"
+                android:layout_marginRight="98dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="notificationsAndSounds"
+                android:text="Data Saver Settings"
+                app:layout_constraintBottom_toTopOf="@+id/chatHeads"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/notification5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="98dp"
+                android:layout_marginLeft="98dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="98dp"
+                android:layout_marginRight="98dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="notificationsAndSounds"
+                android:text="SMS Settings"
+                app:layout_constraintBottom_toTopOf="@+id/chatHeads"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/notification6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="98dp"
+                android:layout_marginLeft="98dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="98dp"
+                android:layout_marginRight="98dp"
+                android:layout_marginBottom="10dp"
+                android:onClick="notificationsAndSounds"
+                android:text="Photos and Media"
+                app:layout_constraintBottom_toTopOf="@+id/chatHeads"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        </TableRow>
+    </TableLayout>
+</ScrollView>

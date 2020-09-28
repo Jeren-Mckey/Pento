@@ -16,8 +16,6 @@ public class SettingsActivity extends Activity {
         setContentView(R.layout.settings);
 
         final Button notficationsAndSounds = findViewById(R.id.notificationsAndSounds);
-        final CheckBox chatHeads = findViewById(R.id.chatHeads);
-        final Switch showLocation = findViewById(R.id.showLocation);
 
     }
 
@@ -26,19 +24,6 @@ public class SettingsActivity extends Activity {
             Toast.makeText(SettingsActivity.this, "Notifications and Settings Pressed", Toast.LENGTH_SHORT).show();
         }
     }
-    public void chatHeads(View v){
-        if(v.getId() == R.id.chatHeads){
-            boolean checked = ((CheckBox) v).isChecked();
-            if(checked) {
-                Toast.makeText(SettingsActivity.this, "Chat Heads toggled", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
 
-    public void showLocation(View v){
-        if(v.getId() == R.id.showLocation){
-            Toast.makeText(SettingsActivity.this, "Show Location toggled", Toast.LENGTH_SHORT).show();
-        }
-    }
 
 }
