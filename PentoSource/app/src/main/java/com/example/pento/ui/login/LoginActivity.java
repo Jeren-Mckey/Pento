@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -23,12 +24,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pento.R;
+import com.example.pento.SettingsActivity;
 import com.example.pento.ui.login.LoginViewModel;
 import com.example.pento.ui.login.LoginViewModelFactory;
 
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
+
+    // Hello world from local master branch!
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -115,6 +119,8 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+                Intent i = new Intent(LoginActivity.this, SettingsActivity.class);
+                startActivity(i);
             }
         });
     }
