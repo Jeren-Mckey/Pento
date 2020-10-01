@@ -5,19 +5,27 @@ package com.example.pento.data.model;
  */
 public class LoggedInUser {
 
-    private String userId;
-    private String displayName;
+    private String username;
+    private String password;
 
-    public LoggedInUser(String userId, String displayName) {
-        this.userId = userId;
-        this.displayName = displayName;
+    public LoggedInUser(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public String getDisplayName() {
-        return displayName;
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String toString() {
+        return "User {" +
+                "username='" + username + '\'' +
+                ", password=" + password +
+                '}';
     }
 }
