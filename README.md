@@ -11,7 +11,8 @@ connections. Current development on hold.
 
 * [Android Studio](https://developer.android.com/studio/) - The IDE used
 * [Gradle](https://gradle.org/) - Dependency Management
-* [Amazon Web Services](https://aws.amazon.com/) - Handles authentication, security and data storage
+* [Spring Boot] - Api Development
+* [Google Firebase](https://aws.amazon.com/) - Authentication, security and data storage
 
 ## Authors
 
