@@ -21,8 +21,6 @@ Pento is for New Grads and College students new to an area who are looking for n
 * **Evan Ogawa** - *Developer* - [Github](https://github.com/EOgawa)
 * **Areeb Yaqub** - *Developer* - [Github](https://github.com/areebia)
 
-See also the list of [contributors](https://github.com/Pento/contributors) who participated in this project.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
