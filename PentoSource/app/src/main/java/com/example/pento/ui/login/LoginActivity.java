@@ -23,10 +23,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pento.R;
 import com.example.pento.SettingsActivity;
-import com.example.pento.ui.login.LoginViewModel;
-import com.example.pento.ui.login.LoginViewModelFactory;
+import com.example.pento.SplashLoadingActivity;
+import com.example.pento.R;
 
 public class LoginActivity extends AppCompatActivity {
 
