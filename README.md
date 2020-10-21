@@ -1,23 +1,25 @@
 # What is Pento?
 
-Pento is an android messaging app that conencts people around each other using the things they all love to do. 
-The primary function of this app is to take a an interest, like basketball or video games, and match together
-5 different users who all share that interest into a chat room. The app relies on location data from the user and attempts 
-to match users who are closest together. Their is private messaging functionality but group chatting is what is encouraged.
-The chat is meant to be informal; people can leave or enter groups as they see fit. Pento seeks to help people find meaningful
-connections. Current development on hold.
+Pento is for New Grads and College students new to an area who are looking for new friend groups that share a common interest. Pento is a social networking mobile app that Connects you with other like-minded people in a simple and safe way. Unlike Facebook messenger’s popular group systemour app actively finds and presents small, interest-focused groups to our users without them having to already have any connections.
+
+## Folder Organization
+* PentoSource - Android app source code
+* Backend - Pento API source code
+* Docker, Databse and Frontend - Miscellaneous notes on design and development
 
 ## Development Tools
 
 * [Android Studio](https://developer.android.com/studio/) - The IDE used
 * [Gradle](https://gradle.org/) - Dependency Management
-* [Amazon Web Services](https://aws.amazon.com/) - Handles authentication, security and data storage
+* [Spring Boot](https://spring.io/projects/spring-boot) - API Development
+* [Google Firebase](https://aws.amazon.com/) - Authentication, security and data storage
 
 ## Authors
 
 * **Jeren Mckey** - *Developer* - [Github](https://github.com/Jeren-Mckey)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Jason Tang** - *Developer* - [Github](https://github.com/jason-T-Tang)
+* **Evan Ogawa** - *Developer* - [Github](https://github.com/EOgawa)
+* **Areeb Yaqub** - *Developer* - [Github](https://github.com/areebia)
 
 ## License
 
