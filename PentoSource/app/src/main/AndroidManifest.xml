@@ -28,6 +28,11 @@
             android:label="@string/app_name">
         </activity>
 
+        <activity
+            android:name=".SplashLoadingActivity"
+            android:label="Loading">
+        </activity>
+
     </application>
 
 </manifest>
