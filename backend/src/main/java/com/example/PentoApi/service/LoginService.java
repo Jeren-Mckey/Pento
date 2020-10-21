@@ -30,6 +30,7 @@ public class LoginService {
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
+
     public User getUser(String name) throws InterruptedException, ExecutionException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         DocumentReference documentReference = dbFirestore.collection(COL_NAME).document(name);

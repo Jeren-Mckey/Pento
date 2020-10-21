@@ -18,7 +18,7 @@ public class LoginController {
     @Autowired
     private LoginService loginService = new LoginService();
 
-    @GetMapping(value = "/getUser")
+    @GetMapping(value = "/user")
     public List<User> getUser() throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{
@@ -34,7 +34,7 @@ public class LoginController {
      * Gets user info
      * return
      */
-    @GetMapping(value = "/getUser/{username}")
+    @GetMapping(value = "/user/{username}")
     public User getUser(@PathVariable String username) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{
@@ -51,7 +51,7 @@ public class LoginController {
      * param user - user being added
      * return
      */
-    @PostMapping(value = "/createUser", consumes = "application/json", produces = "application/json")
+    @PostMapping(value = "/user", consumes = "application/json", produces = "application/json")
     public String postUser(@RequestBody User user) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try
