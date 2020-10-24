@@ -32,9 +32,9 @@ public class LoginController {
 
     /**
      * Gets user info
-     * return
+     * return User
      */
-    @GetMapping(value = "/user/{username}")
+    @GetMapping(value = "/user/{username}", consumes = "application/json", produces = "application/json")
     public User getUser(@PathVariable String username) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{

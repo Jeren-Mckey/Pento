@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import com.example.PentoApi.doa.User;
-import com.example.PentoApi.doa.UserRepo;
+
 /**
  * Service that handles Login/Sign-up requests
  */
