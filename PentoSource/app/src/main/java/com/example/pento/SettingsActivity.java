@@ -3,13 +3,8 @@ package com.example.pento;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.Switch;
-import android.widget.Toast;
 
-import com.example.pento.ui.login.LoginActivity;
+import com.example.pento.ui.chat.ChatActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,7 +23,7 @@ public class SettingsActivity extends Activity {
 
             @Override
             public void run() {
-                Intent i = new Intent(SettingsActivity.this, SplashLoadingActivity.class);
+                Intent i = new Intent(SettingsActivity.this, ChatActivity.class);
                 startActivity(i);
             }
         };
