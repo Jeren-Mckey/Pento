@@ -23,13 +23,24 @@ public class GroupService {
 
     public static final String COL_NAME = "groups";
 
-    public Group getGroup(String group_id) {}
 
-    public void getAllGroups() {}
+    public Group getGroup(String group_id) {
 
-    public void postGroup() {}
+    }
 
-    public void deleteGroup() {}
+    public ArrayList<Group> getAllGroups(String user_id) {
 
-    public void updateGroup() {}
+    }
+
+    public String postGroup(Group group) {
+
+    }
+
+    public String deleteGroup(String group_id) {
+
+    }
+
+    public String updateGroup(Group group) {
+
+    }
 }

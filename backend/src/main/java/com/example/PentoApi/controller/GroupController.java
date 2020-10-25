@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.PentoApi.doa.Group;
 import com.example.PentoApi.service.GroupService;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -16,13 +16,13 @@ import java.util.concurrent.ExecutionException;
 public class GroupController {
 
     @Autowired
-    private GroupService loginService = new GroupService();
+    private GroupService groupService = new GroupService();
 
-    @GetMapping(value = "/group")
-    public List<Group> getGroup() throws InterruptedException, ExecutionException {
+    @GetMapping(value = "/group/{user_id}")
+    public ArrayList<Group> getAllGroups(@PathVariable String user_id) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{
-            return GroupService.getAllGroups();
+            return groupService.getAllGroups(user_id);
         }
         catch (Exception e)
         {
@@ -38,7 +38,7 @@ public class GroupController {
     public Group getGroup(@PathVariable String group_name) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{
-            return GroupService.getGroup(group_name);
+            return groupService.getGroup(group_name);
         }
         catch (Exception e)
         {
@@ -56,7 +56,7 @@ public class GroupController {
         long startTime = System.nanoTime();
         try
         {
-            return GroupService.postGroup(group);
+            return groupService.postGroup(group);
         }
         catch (Exception e)
         {
@@ -70,11 +70,11 @@ public class GroupController {
      * return String - confirmation string
      */
     @DeleteMapping(value = "/group/{group_id}", consumes = "application/json", produces = "application/json")
-    public String postGroup(@PathVariable Group group_id) throws InterruptedException, ExecutionException {
+    public String deleteGroup(@PathVariable String group_id) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try
         {
-            return GroupService.deleteGroup(group_id);
+            return groupService.deleteGroup(group_id);
         }
         catch (Exception e)
         {
@@ -88,11 +88,11 @@ public class GroupController {
      * return String - confirmation string
      */
     @PutMapping(value = "/group", consumes = "application/json", produces = "application/json")
-    public String postGroup(@RequestBody Group group) throws InterruptedException, ExecutionException {
+    public String updateGroup(@RequestBody Group group) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try
         {
-            return GroupService.updateGroup(group);
+            return groupService.updateGroup(group);
         }
         catch (Exception e)
         {

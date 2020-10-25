@@ -22,4 +22,16 @@ import com.example.PentoApi.doa.Message;
 public class MessageService {
 
     public static final String COL_NAME = "groups/";
+
+    public String postMessage(String group_id, Message message) {
+
+    }
+
+    public ArrayList<Message> getAllMessages(String group_id) {
+
+    }
+
+    public String deleteMessage(String group_id, String message_id) {
+
+    }
 }
