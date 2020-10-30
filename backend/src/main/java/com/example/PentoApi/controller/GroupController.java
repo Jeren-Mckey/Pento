@@ -6,6 +6,7 @@ import com.example.PentoApi.doa.Group;
 import com.example.PentoApi.service.GroupService;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -19,7 +20,7 @@ public class GroupController {
     private GroupService groupService = new GroupService();
 
     @GetMapping(value = "/group/{user_id}")
-    public ArrayList<Group> getAllGroups(@PathVariable String user_id) throws InterruptedException, ExecutionException {
+    public List<Group> getAllGroups(@PathVariable String user_id) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{
             return groupService.getAllGroups(user_id);

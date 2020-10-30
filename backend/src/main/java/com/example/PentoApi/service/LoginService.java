@@ -61,15 +61,15 @@ public class LoginService {
         return users;
     }
 
-    /**public String updateUser(User usr) throws InterruptedException, ExecutionException {
+    public String updateUser(User usr) throws InterruptedException, ExecutionException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection(COL_NAME).document(person.getName()).set(person);
+        ApiFuture<WriteResult> collectionsApiFuture = dbFirestore.collection(COL_NAME).document(usr.getUsername()).set(usr);
         return collectionsApiFuture.get().getUpdateTime().toString();
     }
 
     public String deleteUser(String name) {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         ApiFuture<WriteResult> writeResult = dbFirestore.collection(COL_NAME).document(name).delete();
-        return "Document with Patient ID "+name+" has been deleted";
-    }**/
+        return name+" has been deleted";
+    }
 }
