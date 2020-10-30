@@ -9,12 +9,13 @@ import lombok.Data;
 public class Message {
     private String content;
     private String member_id;
-    private String timestamp;
+    private long message_id;
 
     public Message() {}
     public Message(String content, String member) {
         this.content = content;
         this.member_id = member;
+        this.message_id = 0;
     }
     public void setContent(String content) {
         this.content = content;
@@ -27,6 +28,4 @@ public class Message {
     public String getMember() {
         return member_id;
     }
-
-    public String getTimestamp() { return timestamp; }
 }
