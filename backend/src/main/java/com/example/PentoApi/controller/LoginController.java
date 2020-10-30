@@ -19,7 +19,7 @@ public class LoginController {
     private LoginService loginService = new LoginService();
 
     @GetMapping(value = "/user")
-    public List<User> getUsers() throws InterruptedException, ExecutionException {
+    public List<User> getUser() throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{
             return loginService.getAllUsers();
@@ -57,42 +57,6 @@ public class LoginController {
         try
         {
             return loginService.postUser(user);
-        }
-        catch (Exception e)
-        {
-            return null;
-        }
-    }
-
-    /**
-     * Updates a user to the database (sign-up)
-     * param user - user being updated
-     * return
-     */
-    @PutMapping(value = "/user", consumes = "application/json", produces = "application/json")
-    public String updateUser(@RequestBody User user) throws InterruptedException, ExecutionException {
-        long startTime = System.nanoTime();
-        try
-        {
-            return loginService.updateUser(user);
-        }
-        catch (Exception e)
-        {
-            return null;
-        }
-    }
-
-    /**
-     * Delete a user in the database
-     * param user - user being deleted
-     * return confirmation-string
-     */
-    @DeleteMapping(value = "/user", consumes = "application/json", produces = "application/json")
-    public String deleteUser(@PathVariable String username) throws InterruptedException, ExecutionException {
-        long startTime = System.nanoTime();
-        try
-        {
-            return loginService.deleteUser(username);
         }
         catch (Exception e)
         {

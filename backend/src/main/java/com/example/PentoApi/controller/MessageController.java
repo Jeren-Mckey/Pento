@@ -6,7 +6,6 @@ import com.example.PentoApi.doa.Message;
 import com.example.PentoApi.service.MessageService;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -38,8 +37,7 @@ public class MessageController {
     }
 
     @GetMapping(value = "/message/{group_id}")
-    public @ResponseBody
-    List<Message> getAllMessages(@PathVariable String group_id) throws InterruptedException, ExecutionException {
+    public @ResponseBody ArrayList<Message> getAllMessages(@PathVariable String group_id) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{
             return messageService.getAllMessages(group_id);

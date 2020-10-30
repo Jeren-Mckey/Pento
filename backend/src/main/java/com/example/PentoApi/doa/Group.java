@@ -50,5 +50,4 @@ public class Group {
     public String getRegion() {
         return this.region;
     }
-
 }
