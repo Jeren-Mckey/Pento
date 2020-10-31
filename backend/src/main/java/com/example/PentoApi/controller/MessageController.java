@@ -6,6 +6,7 @@ import com.example.PentoApi.doa.Message;
 import com.example.PentoApi.service.MessageService;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -37,7 +38,7 @@ public class MessageController {
     }
 
     @GetMapping(value = "/message/{group_id}")
-    public @ResponseBody ArrayList<Message> getAllMessages(@PathVariable String group_id) throws InterruptedException, ExecutionException {
+    public @ResponseBody List<Message> getAllMessages(@PathVariable String group_id) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{
             return messageService.getAllMessages(group_id);
@@ -48,22 +49,5 @@ public class MessageController {
         }
     }
 
-    /**
-     * Delete group from database
-     * param group_id - id of the the group to be deleted
-     * return String - confirmation string
-     */
-    @DeleteMapping(value = "/message/{group_id}/{message_id}", consumes = "application/json", produces = "application/json")
-    public @ResponseBody String deleteGroup(@PathVariable String group_id, @PathVariable String message_id) throws InterruptedException, ExecutionException {
-        long startTime = System.nanoTime();
-        try
-        {
-            return messageService.deleteMessage(group_id, message_id);
-        }
-        catch (Exception e)
-        {
-            return null;
-        }
-    }
 
 }
