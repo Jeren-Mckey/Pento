@@ -34,15 +34,16 @@ public class LoginController {
      * Gets user info
      * return User
      */
-    @GetMapping(value = "/user/{username}", consumes = "application/json", produces = "application/json")
-    public @ResponseBody User getUser(@PathVariable String username) throws InterruptedException, ExecutionException {
+    @GetMapping(value = "/user/{username}")
+    @ResponseBody
+    public User getUser(@PathVariable String username) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{
             return loginService.getUser(username);
         }
         catch (Exception e)
         {
-            return null;
+            return new User();
         }
     }
 

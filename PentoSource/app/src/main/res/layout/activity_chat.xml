@@ -22,7 +22,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="8dp"
         android:background="@drawable/bg_edit_text"
-        android:hint="Ask Christopher"
+        android:hint=""
         android:inputType="text"
         android:textColor="#fff"
         android:padding="12dp"

@@ -1,6 +1,7 @@
 package com.example.PentoApi.doa;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 
@@ -12,10 +13,10 @@ public class User {
     private String username;
     private String password;
     private String region;
-    private ArrayList<Integer> groups;
+    private List<String> groups;
 
     public User() {}
-    public User(String name, String password, String region, ArrayList<Integer> groups) {
+    public User(String name, String password, String region, List<String> groups) {
         this.username = name;
         this.password = password;
         this.region = region;
@@ -45,11 +46,11 @@ public class User {
         this.region = region;
     }
 
-    public ArrayList<Integer> getGroups() {
+    public List<String> getGroups() {
         return groups;
     }
 
-    public void setGroups(ArrayList<Integer> groups) {
+    public void setGroups(List<String> groups) {
         this.groups = groups;
     }
 }
