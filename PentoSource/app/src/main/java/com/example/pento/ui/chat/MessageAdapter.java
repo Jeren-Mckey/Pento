@@ -9,18 +9,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.pento.R;
-
-import java.util.ArrayList;
-import java.util.List;
-
-
-/**
- * Created by deathcode on 26/01/18.
- */
 
 public class MessageAdapter extends RecyclerView.Adapter<com.example.pento.ui.chat.MessageAdapter.CustomViewHolder> {
 
@@ -69,7 +59,7 @@ public class MessageAdapter extends RecyclerView.Adapter<com.example.pento.ui.ch
         if(list.get(position).isMe()){
             return R.layout.me_bubble;
         }
-        return R.layout.bot_bubble;
+        return R.layout.other_bubble;
     }
 
     @Override

@@ -1,8 +1,5 @@
 package com.example.pento.ui.chat;
 
-/**
- * Created by deathcode on 26/01/18.
- */
 
 public class ResponseMessage {
 

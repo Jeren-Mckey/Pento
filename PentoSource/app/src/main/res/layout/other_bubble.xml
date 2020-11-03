@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:elevation="3dp"
-            android:background="@drawable/bot_bubble"
+            android:background="@drawable/other_bubble"
             android:padding="16dp"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp" />

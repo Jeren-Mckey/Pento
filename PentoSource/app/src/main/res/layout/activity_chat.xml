@@ -8,11 +8,41 @@
     tools:context="com.example.pento.ui.chat.ChatActivity">
 
 
+    <RelativeLayout
+        android:id="@+id/upper_nav"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/chat_back"
+            android:background="@drawable/back_button"></androidx.appcompat.widget.AppCompatImageButton>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@android:color/white"
+            android:text="Cabbage Patch Cats"
+            android:layout_toRightOf="@id/chat_back"
+            android:textSize="30dp"
+            android:textColor="#000"></androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/report_button"></androidx.appcompat.widget.AppCompatImageButton>
+
+    </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/conversation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="548dp"
         android:layout_above="@+id/userInput"
+        android:layout_below="@+id/upper_nav"
         android:textSize="16sp" />
 
     <EditText
@@ -22,7 +52,6 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="8dp"
         android:background="@drawable/bg_edit_text"
-        android:hint="Ask Christopher"
         android:inputType="text"
         android:textColor="#fff"
         android:padding="12dp"
@@ -30,4 +59,6 @@
         android:imeOptions="actionSend"
         android:textColorHint="#fff"
         android:textSize="20sp"/>
+
+
 </RelativeLayout>
