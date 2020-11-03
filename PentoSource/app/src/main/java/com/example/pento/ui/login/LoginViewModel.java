@@ -4,14 +4,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.util.Patterns;
 
-import com.example.pento.SettingsActivity;
 import com.example.pento.data.LoginRepository;
 import com.example.pento.data.Result;
-import com.example.pento.data.model.LoggedInUser;
 import com.example.pento.R;
 
 public class LoginViewModel extends ViewModel {
