@@ -28,7 +28,7 @@ public class PentoApiApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
-		User usr = new User("xxMasterCJ21xx", "JJmm122441", "none", new ArrayList<Integer>());
+		/*User usr = new User("xxMasterCJ21xx", "JJmm122441", "none", new ArrayList<Integer>());
 		LoginController login_controller = new LoginController();
 		String r = login_controller.postUser(usr);
 		System.out.println(r);
@@ -40,7 +40,7 @@ public class PentoApiApplication implements ApplicationRunner {
 		System.out.println(n);
 		User usr2 = new User("xxMasterCJ21xx", "newpassword", "LA", new ArrayList<Integer>());
 		String p = login_controller.updateUser(usr2);
-		System.out.println(p);
+		System.out.println(p);*/
 		//curl -i -H "Accept: application/json" -H "Content-Type:application/json" -X
 	    //POST --data "{\"username\": \"johy\", \"password\": \"adadasda\"}" localhost:8080/createUser
 	}
