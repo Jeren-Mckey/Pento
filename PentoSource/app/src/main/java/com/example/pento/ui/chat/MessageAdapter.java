@@ -12,7 +12,12 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.pento.R;
 
-public class MessageAdapter extends RecyclerView.Adapter<com.example.pento.ui.chat.MessageAdapter.CustomViewHolder> {
+import com.example.pento.data.model.ResponseMessage;
+import com.example.pento.data.model.ResponseMessageList;
+
+
+public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomViewHolder> {
+
 
     Context context;
     ResponseMessageList list;
@@ -40,16 +45,17 @@ public class MessageAdapter extends RecyclerView.Adapter<com.example.pento.ui.ch
 
     public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent,String input) {
 //        Todo
+          // ChatRepository.send();
 //        Send message to backend
-        if (i == EditorInfo.IME_ACTION_SEND) {
-            ResponseMessage responseMessage = new ResponseMessage(input,"Literally me", true);
+       /* if (i == EditorInfo.IME_ACTION_SEND) {
+            ResponseMessage responseMessage = new ResponseMessage(input,"Literally me");
             list.add(responseMessage);
-            ResponseMessage responseMessage2 = new ResponseMessage("generic response text", "Decepticon",false);
+            ResponseMessage responseMessage2 = new ResponseMessage("generic response text", "Decepticon");
             list.add(responseMessage2);
-            ResponseMessage responseMessage3 = new ResponseMessage("anyfollowups?","Decepticon", false);
+            ResponseMessage responseMessage3 = new ResponseMessage("anyfollowups?","Decepticon");
             list.add(responseMessage3);
             notifyDataSetChanged();
-        }
+        }*/
         return false;
     }
 

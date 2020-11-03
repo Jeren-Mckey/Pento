@@ -116,10 +116,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
+                boolean result = loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
-                Intent i = new Intent(LoginActivity.this, SettingsActivity.class);
-                startActivity(i);
+                if (result == true) {
+                    Intent i = new Intent(LoginActivity.this, SettingsActivity.class);
+                    startActivity(i);
+                }
+                else loadingProgressBar.setVisibility(View.INVISIBLE);
             }
         });
     }

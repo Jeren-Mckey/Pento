@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.pento.R;
+import com.example.pento.data.model.ResponseMessage;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -36,13 +38,13 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                ResponseMessage responseMessage2 = new ResponseMessage("are you there?", "Autobot",false);
-                messageAdapter.list.add(responseMessage2);
+                //ResponseMessage responseMessage2 = new ResponseMessage("are you there?", "Autobot","");
+                //messageAdapter.list.add(responseMessage2);
                 runOnUiThread (new Thread(new Runnable() {
                     public void run() {
                         messageAdapter.notifyDataSetChanged();
                         if (!isLastVisible())
-                            recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+                            recyclerView.smoothScrollToPosition(messageAdapter.getItemCount());
                             try {
                                 Thread.sleep(300);
                             }

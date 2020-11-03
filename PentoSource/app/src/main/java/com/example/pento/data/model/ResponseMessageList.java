@@ -1,4 +1,6 @@
-package com.example.pento.ui.chat;
+package com.example.pento.data.model;
+
+import com.example.pento.data.model.ResponseMessage;
 
 import java.util.ArrayList;
 import java.util.List;
