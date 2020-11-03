@@ -48,8 +48,10 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                //ResponseMessage responseMessage2 = new ResponseMessage("are you there?", "Autobot","");
-                //messageAdapter.list.add(responseMessage2);
+                ResponseMessage responseMessage2 = new ResponseMessage("Scheduled update", "Automatic", false,"");
+                ResponseMessage responseMessage3 = new ResponseMessage("Unsynced from user sending a message", "Automatic", false,"");
+                messageAdapter.list.add(responseMessage2);
+                messageAdapter.list.add(responseMessage3);
                 runOnUiThread (new Thread(new Runnable() {
                     public void run() {
                         messageAdapter.notifyDataSetChanged();
@@ -65,7 +67,7 @@ public class ChatActivity extends AppCompatActivity {
                     }));
             }
         };
-        timer.scheduleAtFixedRate(new checkTask(),100, 2000);
+        timer.scheduleAtFixedRate(new checkTask(),1000, 6000);
 
         userInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override

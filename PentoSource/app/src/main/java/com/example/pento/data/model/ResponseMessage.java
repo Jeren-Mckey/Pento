@@ -8,9 +8,10 @@ public class ResponseMessage {
     private String group_id;
     private String timestamp;
 
-    public ResponseMessage(String text, String username, String group_id) {
+    public ResponseMessage(String text, String username, boolean isMe,String group_id) {
         this.text = text;
         this.username = username;
+        this.isMe = isMe;
     }
 
     public String getText() {

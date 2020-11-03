@@ -47,15 +47,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomVi
 //        Todo
           // ChatRepository.send();
 //        Send message to backend
-       /* if (i == EditorInfo.IME_ACTION_SEND) {
-            ResponseMessage responseMessage = new ResponseMessage(input,"Literally me");
+        if (i == EditorInfo.IME_ACTION_SEND) {
+            ResponseMessage responseMessage = new ResponseMessage(input,"Username",true,"");
             list.add(responseMessage);
-            ResponseMessage responseMessage2 = new ResponseMessage("generic response text", "Decepticon");
+            ResponseMessage responseMessage2 = new ResponseMessage("Frontend Response", "Bot", false,"");
             list.add(responseMessage2);
-            ResponseMessage responseMessage3 = new ResponseMessage("anyfollowups?","Decepticon");
-            list.add(responseMessage3);
             notifyDataSetChanged();
-        }*/
+        }
         return false;
     }
 
@@ -90,7 +88,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomVi
 //          TODO
 //          Backend.getPFP
 //          holder.img.setIMageResource(PFPIMAGE)
-            holder.pfp.setImageResource(R.drawable.add);
+            holder.pfp.setImageResource(R.drawable.cmcircle);
         }
         else{
 //          TODO
