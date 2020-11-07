@@ -18,7 +18,7 @@ public class MessageRepository {
     private ResponseMessageList messages = null;
 
     // private constructor : singleton access
-    private MessageRepository(MessageDataSource dataSource) {
+    public MessageRepository(MessageDataSource dataSource) {
         this.dataSource = dataSource;
     }
 

@@ -15,7 +15,13 @@ import android.widget.Toast;
 
 import com.example.pento.ProfileActivity;
 import com.example.pento.R;
+import com.example.pento.data.LoginRepository;
+import com.example.pento.data.MessageDataSource;
+import com.example.pento.data.MessageRepository;
+import com.example.pento.data.Result;
+import com.example.pento.data.model.LoggedInUser;
 import com.example.pento.data.model.ResponseMessage;
+import com.example.pento.data.model.ResponseMessageList;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -25,6 +31,9 @@ public class ChatActivity extends AppCompatActivity {
     EditText userInput;
     RecyclerView recyclerView;
     MessageAdapter messageAdapter;
+    private MessageDataSource messageDataSource = new MessageDataSource();
+    private MessageRepository messageRepository = new MessageRepository(messageDataSource);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +57,16 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                ResponseMessage responseMessage2 = new ResponseMessage("Scheduled update", "Automatic", false,"");
-                ResponseMessage responseMessage3 = new ResponseMessage("Unsynced from user sending a message", "Automatic", false,"");
-                messageAdapter.list.add(responseMessage2);
-                messageAdapter.list.add(responseMessage3);
+
+                Result<ResponseMessageList> list = messageRepository.getMessages("Group1");
+                if (list instanceof Result.Success) {
+                    messageAdapter.list = ((Result.Success<ResponseMessageList>) list).getData();
+                }
                 runOnUiThread (new Thread(new Runnable() {
                     public void run() {
                         messageAdapter.notifyDataSetChanged();
                         if (!isLastVisible())
-                            recyclerView.smoothScrollToPosition(messageAdapter.getItemCount());
+                            recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
                             try {
                                 Thread.sleep(300);
                             }
@@ -74,7 +84,13 @@ public class ChatActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 boolean value = false;
                 if (i == EditorInfo.IME_ACTION_SEND) {
-                    value = messageAdapter.onEditorAction(textView,i,keyEvent,userInput.getText().toString());
+                    Result<String> result = messageRepository.sendMessage(userInput.getText().toString(), "xxMasterCJ21xx", "Group1");
+                    if (result instanceof Result.Success) {
+                        value = messageAdapter.onEditorAction(textView, i, keyEvent, userInput.getText().toString());
+                    }
+                    else{
+                        System.out.println("Error");
+                    }
                 }
                 if (!isLastVisible())
                     recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);

@@ -16,9 +16,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+
 
 /**
  * Class that handles authentication w/ login credentials and retrieves user information.
@@ -80,8 +78,8 @@ public class LoginDataSource {
             LoggedInUser usr = new LoggedInUser(username, password, "", null);
             AsyncTask<LoggedInUser, Void, String> task = new LoginValidateTask().execute(usr);
             String response = task.get();
-            if (response == "Duplicate") return new Result.Error(new IOException("Wrong Password Given"));
-            else if (response == "Failure")
+            if (response.equals("Duplicate")) return new Result.Error(new IOException("Wrong Password Given"));
+            else if (response.equals("Failure"))
             {
                 AsyncTask<LoggedInUser, Void, String> task2 = new RegisterUserTask().execute(usr);
                 String response2 = task2.get();
