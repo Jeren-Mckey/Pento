@@ -41,6 +41,13 @@ public class GroupService {
         }
     }
 
+    //method that returns a list of groups with matching tags
+    public List<Group> getTaggedGroups(String[] tags) throws ExecutionException, InterruptedException {
+        // get all groups.
+        // for each non-matching group, remove from the retrieved list.
+        // return group list.
+    }
+
     public List<Group> getAllGroups(String user_id) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         //asynchronously retrieve all documents

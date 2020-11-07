@@ -9,7 +9,7 @@ import com.example.pento.ui.chat.ChatActivity;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SettingsActivity extends Activity {
+public class LoadingActivity extends Activity {
 
 
     @Override
@@ -23,8 +23,9 @@ public class SettingsActivity extends Activity {
 
             @Override
             public void run() {
-                Intent i = new Intent(SettingsActivity.this, ChatActivity.class);
+                Intent i = new Intent(LoadingActivity.this, ProfileActivity.class);
                 startActivity(i);
+                finish();
             }
         };
 

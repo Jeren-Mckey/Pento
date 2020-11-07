@@ -65,7 +65,7 @@ public class MessageDataSource {
 
     public Result<String> sendMessage(String content, String member_id, String group_id) {
         try {
-            ResponseMessage usr = new ResponseMessage(content, member_id, group_id);
+            ResponseMessage usr = new ResponseMessage(content, member_id,true, group_id);
             AsyncTask<ResponseMessage, Void, String> task = new MessageDataSource.SendMessageTask().execute(usr);
             String response = task.get();
             return new Result.Success<>(task.get());

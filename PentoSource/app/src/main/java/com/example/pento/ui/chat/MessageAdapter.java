@@ -10,17 +10,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.pento.R;
+
 import com.example.pento.data.model.ResponseMessage;
 import com.example.pento.data.model.ResponseMessageList;
 
 
-/**
- * Created by deathcode on 26/01/18.
- */
-
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomViewHolder> {
+
 
     Context context;
     ResponseMessageList list;
@@ -64,7 +61,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomVi
         if(list.get(position).getisMe()){
             return R.layout.me_bubble;
         }
-        return R.layout.bot_bubble;
+        return R.layout.other_bubble;
     }
 
     @Override
@@ -89,7 +86,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomVi
 //          TODO
 //          Backend.getPFP
 //          holder.img.setIMageResource(PFPIMAGE)
-            holder.pfp.setImageResource(R.drawable.add);
+            holder.pfp.setImageResource(R.drawable.cmcircle);
         }
         else{
 //          TODO

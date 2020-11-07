@@ -23,8 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pento.SettingsActivity;
-import com.example.pento.SplashLoadingActivity;
+import com.example.pento.LoadingActivity;
 import com.example.pento.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -119,7 +118,7 @@ public class LoginActivity extends AppCompatActivity {
                 boolean result = loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
                 if (result == true) {
-                    Intent i = new Intent(LoginActivity.this, SettingsActivity.class);
+                    Intent i = new Intent(LoginActivity.this, LoadingActivity.class);
                     startActivity(i);
                 }
                 else loadingProgressBar.setVisibility(View.INVISIBLE);
