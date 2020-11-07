@@ -27,7 +27,6 @@ public class PentoApiApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-
 		/*User usr = new User("xxMasterCJ21xx", "JJmm122441", "none", new ArrayList<Integer>());
 		LoginController login_controller = new LoginController();
 		String r = login_controller.postUser(usr);

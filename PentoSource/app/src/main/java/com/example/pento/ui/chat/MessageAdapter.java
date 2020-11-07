@@ -50,22 +50,18 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomVi
 //        Todo
           // ChatRepository.send();
 //        Send message to backend
-       /* if (i == EditorInfo.IME_ACTION_SEND) {
-            ResponseMessage responseMessage = new ResponseMessage(input,"Literally me");
+        if (i == EditorInfo.IME_ACTION_SEND) {
+            ResponseMessage responseMessage = new ResponseMessage(input, "xxMasterCJ21xx", "Group1");
             list.add(responseMessage);
-            ResponseMessage responseMessage2 = new ResponseMessage("generic response text", "Decepticon");
-            list.add(responseMessage2);
-            ResponseMessage responseMessage3 = new ResponseMessage("anyfollowups?","Decepticon");
-            list.add(responseMessage3);
             notifyDataSetChanged();
-        }*/
+        }
         return false;
     }
 
 
     @Override
     public int getItemViewType(int position) {
-        if(list.get(position).isMe()){
+        if(list.get(position).getisMe()){
             return R.layout.me_bubble;
         }
         return R.layout.bot_bubble;
@@ -84,12 +80,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomVi
 
     @Override
     public void onBindViewHolder(CustomViewHolder holder, int position) {
-        holder.textView.setText(list.get(position).getText());
-        holder.username.setText(list.get(position).getUsername());
+        holder.textView.setText(list.get(position).getContent());
+        holder.username.setText(list.get(position).getMember());
 //          TODO
 //          Backend.USRNMAE
 //          holder..setText(PFPIMAGE)
-        if(list.get(position).isMe()) {
+        if(list.get(position).getisMe()) {
 //          TODO
 //          Backend.getPFP
 //          holder.img.setIMageResource(PFPIMAGE)

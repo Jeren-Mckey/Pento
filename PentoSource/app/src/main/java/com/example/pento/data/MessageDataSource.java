@@ -30,19 +30,20 @@ public class MessageDataSource {
             RestTemplate restTemplate = new RestTemplate();
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);
-            JSONObject userJsonObject = new JSONObject();
+            JSONObject messageJsonObject = new JSONObject();
             try {
-                userJsonObject.put("member_id", messages[0].getUsername());
-                userJsonObject.put("password", messages[0].getText());
-                userJsonObject.put("timestamp", messages[0].getTimestamp());
+                messageJsonObject.put("member", messages[0].getMember());
+                messageJsonObject.put("content", messages[0].getContent());
+                messageJsonObject.put("timestamp", messages[0].getTimestamp());
+                messageJsonObject.put("group", messages[0].getGroup());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
             // Make the HTTP GET request, marshaling the response to a String
             HttpEntity<String> request =
-                    new HttpEntity<String>(userJsonObject.toString(), headers);
-            String url = "http://10.0.2.2:8080/message/" + messages[0].getGroup_id();
+                    new HttpEntity<String>(messageJsonObject.toString(), headers);
+            String url = "http://10.0.2.2:8080/message";
             result = restTemplate.postForObject(url, request, String.class);
 
             return result;

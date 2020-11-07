@@ -24,12 +24,13 @@ public class MessageController {
      * param Message - message being added
      * return String - Confirmation string
      */
-    @PostMapping(value = "/message/{group_id}", consumes = "application/json", produces = "application/json")
-    public @ResponseBody String postMessage(@PathVariable String group_id, @RequestBody Message message) throws InterruptedException, ExecutionException {
+    @PostMapping(value = "/message", consumes = "application/json", produces = "application/json")
+    public String postMessage(@RequestBody Message message) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try
         {
-            return messageService.postMessage(group_id, message);
+            System.out.println(message.getContent());
+            return messageService.postMessage(message);
         }
         catch (Exception e)
         {

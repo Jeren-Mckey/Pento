@@ -1,37 +1,56 @@
 package com.example.pento.data.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+@JsonIgnoreProperties(value = { "isMe" })
 public class ResponseMessage {
 
-    private String text;
+    private String content;
     private boolean isMe;
-    private String username;
-    private String group_id;
+    private String member;
+    private String group;
     private String timestamp;
 
-    public ResponseMessage(String text, String username, String group_id) {
-        this.text = text;
-        this.username = username;
+    public ResponseMessage() {}
+
+    public ResponseMessage(String content, String member, String group) {
+        this.content = content;
+        this.member = member;
+        this.group = group;
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        this.timestamp = timestamp.toString();
     }
 
-    public String getText() {
-        return text;
+    public String getContent() {
+        return content;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public boolean isMe() {
+    public boolean getisMe() {
         return isMe;
     }
 
-    public void setMe(boolean me) {
+    public void setisMe(boolean me) {
         isMe = me;
     }
 
-    public String getUsername(){return this.username;}
+    public void setMember(String member) {
+        this.member = member;
+    }
+    public String getMember(){return this.member;}
 
     public String getTimestamp() {return this.timestamp;}
 
-    public String getGroup_id() {return this.group_id;}
+    public void setTimestamp(String timestamp) { this.timestamp = timestamp; }
+
+    public String getGroup() {return this.group;}
+
+    public void setGroup(String group) { this.group = group; }
 }
