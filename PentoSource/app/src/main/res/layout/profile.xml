@@ -87,21 +87,6 @@
 
 
     <TextView
-        android:id="@+id/group1_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginBottom="12dp"
-        android:text="Cabbage Patch Cats"
-        android:textColor="@android:color/white"
-        android:textSize="12pt"
-        app:layout_constraintBottom_toTopOf="@+id/group2_text"
-        app:layout_constraintStart_toEndOf="@+id/group1"
-        app:layout_constraintTop_toBottomOf="@+id/bio"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
         android:id="@+id/group3_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,17 +117,33 @@
         app:srcCompat="@drawable/edit"></androidx.appcompat.widget.AppCompatImageButton>
 
     <TextView
+        android:id="@+id/group1_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="12dp"
+        android:text="Cabbage Patch Cats"
+        android:textColor="@android:color/white"
+        android:textSize="12pt"
+        app:layout_constraintBottom_toTopOf="@+id/group2_text"
+        app:layout_constraintStart_toEndOf="@+id/group1"
+        app:layout_constraintTop_toBottomOf="@+id/bio"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
         android:id="@+id/textView6"
         android:layout_width="156dp"
         android:layout_height="61dp"
-        android:layout_marginTop="4dp"
         android:text="Profile"
         android:textColor="@android:color/white"
         android:textSize="12pt"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.343"
+        app:layout_constraintHorizontal_bias="0.348"
         app:layout_constraintStart_toEndOf="@+id/profile_back"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/textView7"
@@ -158,12 +159,13 @@
         android:id="@+id/imageView"
         android:layout_width="135dp"
         android:layout_height="136dp"
-        android:layout_marginTop="120dp"
         android:src="@drawable/cmcircle"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.188" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/group_search"
@@ -174,7 +176,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintVertical_bias="0.326"
+        app:layout_constraintVertical_bias="0.481"
         app:srcCompat="@drawable/searchbar"></androidx.appcompat.widget.AppCompatImageButton>
 
     <TextView
@@ -184,9 +186,11 @@
         android:text="Connections"
         android:textColor="@android:color/white"
         android:textSize="12pt"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bio" />
+        app:layout_constraintTop_toBottomOf="@+id/bio"
+        app:layout_constraintVertical_bias="0.116" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
