@@ -1,5 +1,6 @@
 package com.example.PentoApi;
 
+import com.example.PentoApi.controller.GroupController;
 import com.example.PentoApi.controller.LoginController;
 import com.example.PentoApi.doa.Group;
 import com.example.PentoApi.doa.User;
@@ -27,6 +28,9 @@ public class PentoApiApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		GroupController controller = new GroupController();
+		List<Group> groups = controller.getAllGroups("Cats");
+		System.out.println(groups.toString());
 		/*User usr = new User("xxMasterCJ21xx", "JJmm122441", "none", new ArrayList<Integer>());
 		LoginController login_controller = new LoginController();
 		String r = login_controller.postUser(usr);

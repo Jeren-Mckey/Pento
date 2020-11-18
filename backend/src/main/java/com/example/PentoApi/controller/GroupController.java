@@ -19,11 +19,11 @@ public class GroupController {
     @Autowired
     private GroupService groupService = new GroupService();
 
-    @GetMapping(value = "/group/{user_id}")
-    public @ResponseBody List<Group> getAllGroups(@PathVariable String user_id) throws InterruptedException, ExecutionException {
+    @GetMapping(value = "/group/{query}")
+    public @ResponseBody List<Group> getAllGroups(@PathVariable String query) throws InterruptedException, ExecutionException {
         long startTime = System.nanoTime();
         try{
-            return groupService.getAllGroups(user_id);
+            return groupService.getAllGroups(query);
         }
         catch (Exception e)
         {
