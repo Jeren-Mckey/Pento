@@ -57,15 +57,17 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-
-                Result<ResponseMessageList> list = messageRepository.getMessages("Group1");
+                Bundle b = getIntent().getExtras();
+                String value = "";
+                if (b != null) value = b.getString("GroupName");
+                Result<ResponseMessageList> list = messageRepository.getMessages(value);
                 if (list instanceof Result.Success) {
                     messageAdapter.list = ((Result.Success<ResponseMessageList>) list).getData();
                 }
                 runOnUiThread (new Thread(new Runnable() {
                     public void run() {
                         messageAdapter.notifyDataSetChanged();
-                        if (!isLastVisible())
+                        if (!isLastVisible() && messageAdapter.getItemCount() > 0)
                             recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
                             try {
                                 Thread.sleep(300);

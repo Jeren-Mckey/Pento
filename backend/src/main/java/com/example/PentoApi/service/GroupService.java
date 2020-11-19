@@ -25,32 +25,6 @@ public class GroupService {
 
     public static final String COL_NAME = "groups";
 
-
-    public Group getGroup(String group_id) throws ExecutionException, InterruptedException {
-        Firestore dbFirestore = FirestoreClient.getFirestore();
-        DocumentReference documentReference = dbFirestore.collection(COL_NAME).document(group_id);
-        ApiFuture<DocumentSnapshot> future = documentReference.get();
-
-        DocumentSnapshot document = future.get();
-
-        Group group = new Group();
-
-        if(document.exists()) {
-            group = document.toObject(Group.class);
-            return group;
-        }else {
-            return null;
-        }
-    }
-
-    //method that returns a list of groups with matching tags
-    /*public List<Group> getTaggedGroups(String[] tags) throws ExecutionException, InterruptedException {
-        // get all groups.
-        // for each non-matching group, remove from the retrieved list.
-        // return group list.
-
-    }*/
-
     public List<Group> getAllGroups(String query) throws ExecutionException, InterruptedException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         CollectionReference groupCollection = dbFirestore.collection(COL_NAME);

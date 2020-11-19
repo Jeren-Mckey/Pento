@@ -32,22 +32,6 @@ public class GroupController {
     }
 
     /**
-     * Gets group info
-     * return Group
-     */
-    @GetMapping(value = "/group/{group_name}")
-    public Group getGroup(@PathVariable String group_name) throws InterruptedException, ExecutionException {
-        long startTime = System.nanoTime();
-        try{
-            return groupService.getGroup(group_name);
-        }
-        catch (Exception e)
-        {
-            return null;
-        }
-    }
-
-    /**
      * Adds a group to the database
      * param Group - group being added
      * return String - Confirmation string
