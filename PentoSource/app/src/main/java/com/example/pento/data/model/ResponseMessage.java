@@ -6,11 +6,9 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@JsonIgnoreProperties(value = { "isMe" })
 public class ResponseMessage {
 
     private String content;
-    private boolean isMe;
     private String member;
     private String group;
     private String timestamp;
@@ -34,12 +32,13 @@ public class ResponseMessage {
     }
 
     public boolean getisMe() {
-        return isMe;
+        return false;
     }
 
-    public void setisMe(boolean me) {
-        isMe = me;
+    public boolean getisMe(String viewer) {
+        return this.member.equals(viewer);
     }
+
 
     public void setMember(String member) {
         this.member = member;

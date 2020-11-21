@@ -49,4 +49,5 @@ public class Group {
         return this.region;
     }
 
+    public String toString(){return name;}
 }

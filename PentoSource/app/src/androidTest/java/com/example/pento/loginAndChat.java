@@ -133,7 +133,7 @@ public class loginAndChat {
         }
 
         ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.userInput),
+                allOf(withId(R.id.searchbar),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
@@ -143,7 +143,7 @@ public class loginAndChat {
         appCompatEditText3.perform(replaceText("wow this works?"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText4 = onView(
-                allOf(withId(R.id.userInput), withText("wow this works?"),
+                allOf(withId(R.id.searchbar), withText("wow this works?"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),

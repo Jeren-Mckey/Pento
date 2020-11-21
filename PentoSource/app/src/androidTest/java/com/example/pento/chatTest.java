@@ -67,7 +67,7 @@ public class chatTest {
         }
 
         ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.userInput),
+                allOf(withId(R.id.searchbar),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
@@ -77,7 +77,7 @@ public class chatTest {
         appCompatEditText.perform(replaceText("hello, so my name is sire lancea lot and i've been tired of working so long on so many classes that i want to yeet my laptop out the window"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText2 = onView(
-                allOf(withId(R.id.userInput), withText("hello, so my name is sire lancea lot and i've been tired of working so long on so many classes that i want to yeet my laptop out the window"),
+                allOf(withId(R.id.searchbar), withText("hello, so my name is sire lancea lot and i've been tired of working so long on so many classes that i want to yeet my laptop out the window"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
@@ -126,7 +126,7 @@ public class chatTest {
         }
 
         ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.userInput),
+                allOf(withId(R.id.searchbar),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
@@ -136,7 +136,7 @@ public class chatTest {
         appCompatEditText3.perform(replaceText(""), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText4 = onView(
-                allOf(withId(R.id.userInput), withText(""),
+                allOf(withId(R.id.searchbar), withText(""),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),

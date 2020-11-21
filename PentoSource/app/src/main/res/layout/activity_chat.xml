@@ -43,24 +43,25 @@
         android:id="@+id/conversation"
         android:layout_width="match_parent"
         android:layout_height="548dp"
-        android:layout_above="@+id/userInput"
+        android:layout_above="@+id/searchbar"
         android:layout_below="@+id/upper_nav"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/userInput"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/bg_edit_text"
-        android:inputType="text"
-        android:textColor="#fff"
-        android:padding="12dp"
         android:imeActionId="4"
         android:imeOptions="actionSend"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#fff"
         android:textColorHint="#fff"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
 
 </RelativeLayout>

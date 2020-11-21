@@ -54,7 +54,7 @@ public class GroupDataSource {
         {
             Group[] result;
             RestTemplate restTemplate = new RestTemplate();
-            String url = "http://10.0.2.2:8080/message/" + groups[0];
+            String url = "http://10.0.2.2:8080/group/" + groups[0];
             result = restTemplate.getForObject(url, Group[].class);
             return result;
         }

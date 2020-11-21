@@ -11,17 +11,9 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.pento.ProfileActivity;
 import com.example.pento.R;
-import com.example.pento.data.LoginRepository;
-import com.example.pento.data.MessageDataSource;
-import com.example.pento.data.MessageRepository;
-import com.example.pento.data.Result;
-import com.example.pento.data.model.LoggedInUser;
-import com.example.pento.data.model.ResponseMessage;
-import com.example.pento.data.model.ResponseMessageList;
+import com.example.pento.ui.groups.ProfileActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -31,8 +23,7 @@ public class ChatActivity extends AppCompatActivity {
     EditText userInput;
     RecyclerView recyclerView;
     MessageAdapter messageAdapter;
-    private MessageDataSource messageDataSource = new MessageDataSource();
-    private MessageRepository messageRepository = new MessageRepository(messageDataSource);
+
 
 
     @Override
@@ -46,13 +37,15 @@ public class ChatActivity extends AppCompatActivity {
         recyclerView.setAdapter(messageAdapter);
         recyclerView.getAdapter().notifyDataSetChanged();
         recyclerView.getAdapter().notifyDataSetChanged();
+
         Bundle b = getIntent().getExtras();
         String value = ""; // or other values
         if(b != null)
             value = b.getString("GroupName");
-        TextView group_name = findViewById(R.id.GroupName);
+        final TextView group_name = findViewById(R.id.GroupName);
         group_name.setText(value);
         Timer timer = new Timer();
+
         class checkTask extends TimerTask {
 
             @Override
@@ -60,10 +53,7 @@ public class ChatActivity extends AppCompatActivity {
                 Bundle b = getIntent().getExtras();
                 String value = "";
                 if (b != null) value = b.getString("GroupName");
-                Result<ResponseMessageList> list = messageRepository.getMessages(value);
-                if (list instanceof Result.Success) {
-                    messageAdapter.list = ((Result.Success<ResponseMessageList>) list).getData();
-                }
+                    messageAdapter.update(value);
                 runOnUiThread (new Thread(new Runnable() {
                     public void run() {
                         messageAdapter.notifyDataSetChanged();
@@ -85,15 +75,13 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 boolean value = false;
-                if (i == EditorInfo.IME_ACTION_SEND) {
-                    Result<String> result = messageRepository.sendMessage(userInput.getText().toString(), "xxMasterCJ21xx", "Group1");
-                    if (result instanceof Result.Success) {
-                        value = messageAdapter.onEditorAction(textView, i, keyEvent, userInput.getText().toString());
-                    }
-                    else{
-                        System.out.println("Error");
-                    }
+                Bundle b = getIntent().getExtras();
+                String groupname = "";
+                if (b != null) groupname = b.getString("GroupName");
+                if (i == EditorInfo.IME_ACTION_SEND && userInput.getText().toString().length()>0) {
+                    value = messageAdapter.onEditorAction(textView, i, keyEvent, userInput.getText().toString(),groupname);
                 }
+                userInput.getText().clear();
                 if (!isLastVisible())
                     recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
                 return value;
