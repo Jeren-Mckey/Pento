@@ -1,0 +1,158 @@
+// (1) Empty username test. Should reject
+
+curl --location --request POST 'localhost:8080/user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username":"",
+    "password":"zx8Hva-Iod4g8-mKl20O",
+    "region":"San Jose",
+    "groups":[]
+}
+'
+
+// Postman test script. Copied from body of "Tests" field in Postman request
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Signup is rejected", function () {
+    // if the request is accepted, the server returns the time of the update. Otherwise, returns an empty string.
+    var reply = pm.response.text();
+    console.log(reply);
+    pm.expect(0).to.equal(reply.length);
+});
+
+/// /// /// ///
+
+// (2) Empty password test. Should reject
+
+curl --location --request POST 'localhost:8080/user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username":"JaneDoe",
+    "password":"",
+    "region":"San Jose",
+    "groups":[]
+}'
+
+// Postman test script. Copied from body of "Tests" field in Postman request
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Signup is rejected", function () {
+    // if the request is accepted, the server returns the time of the update. Otherwise, returns an empty string.
+    var reply = pm.response.text();
+    console.log(reply);
+    pm.expect(0).to.equal(reply.length);
+});
+
+/// /// /// ///
+
+// (3) Username too long test. Should reject
+
+curl --location --request POST 'localhost:8080/user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username":"Metatonnnnnnnnnnnnnnn",
+    "password":"zx8Hva-Iod4g8-mKl20O",
+    "region":"San Jose",
+    "groups":[]
+}
+'
+
+// Postman test script. Copied from body of "Tests" field in Postman request
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Signup is rejected", function () {
+    // if the request is accepted, the server returns the time of the update. Otherwise, returns an empty string.
+    var reply = pm.response.text();
+    console.log(reply);
+    pm.expect(0).to.equal(reply.length);
+});
+
+/// /// /// ///
+
+// (4) Password too long test. Should reject
+
+curl --location --request POST 'localhost:8080/user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username":"JaneDoe",
+    "password":"zx8Hva-Iod4g8-mKl20O-vvvvvv",
+    "region":"San Jose",
+    "groups":[]
+}
+'
+
+// Postman test script. Copied from body of "Tests" field in Postman request
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Signup is rejected", function () {
+    // if the request is accepted, the server returns the time of the update. Otherwise, returns an empty string.
+    var reply = pm.response.text();
+    console.log(reply);
+    pm.expect(0).to.equal(reply.length);
+});
+
+/// /// /// ///
+
+// (5) Existing username test. Should reject
+
+curl --location --request POST 'localhost:8080/user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username":"xxMasterCJ21xx,",
+    "password":"zx8Hva-Iod4g8-mKl20O",
+    "region":"San Jose",
+    "groups":[]
+}
+'
+
+// Postman test script. Copied from body of "Tests" field in Postman request
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Signup is rejected", function () {
+    // if the request is accepted, the server returns the time of the update. Otherwise, returns an empty string.
+    var reply = pm.response.text();
+    console.log(reply);
+    pm.expect(0).to.equal(reply.length);
+});
+
+/// /// /// ///
+
+// (6) Unique username of valid length and password of valid length test. Should accept
+
+curl --location --request POST 'localhost:8080/user' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username":"JaneDoe",
+    "password":"zx8Hva-Iod4g8-mKl20O",
+    "region":"San Jose",
+    "groups":[]
+}
+'
+
+// Postman test script. Copied from body of "Tests" field in Postman request
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Signup is accepted", function () {
+    var reply = pm.response.text();
+    console.log(reply);
+    pm.expect(0).to.not.equal(reply.length);
+});
+
