@@ -22,10 +22,12 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.pento.LoadingActivity;
 import com.example.pento.R;
+import com.example.pento.data.model.LoggedInUser;
 
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
+    private static LoggedInUserView user;
 
     // Hello world from local master branch!
 
@@ -115,6 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                 boolean result = loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
                 if (result == true) {
+                    user = new LoggedInUserView(usernameEditText.getText().toString());
                     Intent i = new Intent(LoginActivity.this, LoadingActivity.class);
                     startActivity(i);
                 }
@@ -133,5 +136,7 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
 
-
+    public static String getLoggedInUserName(){
+        return user.getDisplayName();
+    }
 }

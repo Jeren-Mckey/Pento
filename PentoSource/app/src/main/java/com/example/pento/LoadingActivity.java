@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import com.example.pento.ui.chat.ChatActivity;
 import com.example.pento.ui.groups.ProfileActivity;
+import com.example.pento.ui.login.LoginActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;

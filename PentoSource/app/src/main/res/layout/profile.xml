@@ -5,17 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@drawable/profile_bg">
+    android:background="@drawable/profile_bg"
+    android:fillViewport="true">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/your_groups"
         android:layout_width="316dp"
         android:layout_height="144dp"
+        android:layout_marginTop="24dp"
         android:background="#FFF"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -42,7 +43,7 @@
         android:onClick="onClickSwitchIntent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_button" ></androidx.appcompat.widget.AppCompatImageButton>
+        app:srcCompat="@drawable/back_button"></androidx.appcompat.widget.AppCompatImageButton>
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/profileEdit"
@@ -60,7 +61,6 @@
         android:layout_marginTop="60dp"
         android:src="@drawable/cmcircle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,20 +82,20 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/groups"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.301"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/your_groups" />
+        app:layout_constraintTop_toBottomOf="@+id/your_groups"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/groups"
         android:layout_width="303dp"
         android:layout_height="125dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="92dp"
         android:background="#FFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent" />
 
 

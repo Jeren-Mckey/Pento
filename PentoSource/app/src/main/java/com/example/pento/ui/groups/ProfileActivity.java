@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.example.pento.ui.login.LoginActivity;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,7 @@ import com.example.pento.R;
 import com.example.pento.ui.chat.ChatActivity;
 import com.example.pento.ui.login.LoginActivity;
 
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -27,7 +29,6 @@ public class ProfileActivity extends Activity {
     RecyclerView recyclerView2;
     GroupAdapter groupAdapter;
     GroupAdapter groupAdapter2;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,7 @@ public class ProfileActivity extends Activity {
         groupAdapter2 = new GroupAdapter(this);
         recyclerView2.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
         recyclerView2.setAdapter(groupAdapter2);
-        groupAdapter2.update("admin");
+        groupAdapter2.update(LoginActivity.getLoggedInUserName());
         groupAdapter2.notifyDataSetChanged();
 
         userInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
