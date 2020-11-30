@@ -4,6 +4,8 @@ You can press the check mark to enter your username and password and then press 
 
 2) How do I register as a new user?
 
+If your username is free and you have a password, the application will create a new profile for you.
+
 3)What does the profile screen show?
 
 The profile screen first shows the groups you are in on top, then gives a search bar that allows you to search for groups. The bottom box i the groups returned by the search.
@@ -15,3 +17,11 @@ The search bar looks up groups by interest and is case sensitive. If there are n
 5) My group is not showing up but I know it exists.
 
 The search bar is case sensitive, so your group may not be showing up.
+
+6) How do I modify my interests/location?
+
+Through the profile screen.
+
+7) How do I write a complaint report?
+
+From the flag on the top right of the chat window.
